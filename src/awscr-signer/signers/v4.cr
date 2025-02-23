@@ -18,8 +18,7 @@ module Awscr
                        @region : String,
                        @aws_access_key : String,
                        @aws_secret_key : String,
-                       @amz_security_token : String? = nil,
-                       @endpoint : String? = nil)
+                       @amz_security_token : String? = nil)
           @credentials = Signer::Credentials.new(aws_access_key, aws_secret_key)
         end
 

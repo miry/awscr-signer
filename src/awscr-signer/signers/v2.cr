@@ -6,7 +6,7 @@ module Awscr
       class V2
         include Interface
 
-        def initialize(@service : String, @region : String, @aws_access_key : String, @aws_secret_key : String, @endpoint : String? = nil)
+        def initialize(@service : String, @region : String, @aws_access_key : String, @aws_secret_key : String)
           @credentials = Signer::Credentials.new(aws_access_key, aws_secret_key)
         end
 
