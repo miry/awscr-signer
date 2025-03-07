@@ -51,7 +51,8 @@ module Awscr
         def presign(request, expires = nil)
           scope = Signer::Scope.new(@region, @service)
 
-          expires ||= Time.utc.to_unix + 86_400
+          # NOTICE: Expires is not used in the method or for presign only if it is part of query
+          # expires ||= Time.utc.to_unix + 86_400
 
           canonical_request = Signer::V2::Request.new(request.method,
             URI.parse(request.path), request.body)

@@ -51,8 +51,8 @@ module Awscr
         io << "#{key}:#{value}"
       end
 
-      def <=>(header : Header) : Int
-        header.key <=> key
+      def <=>(other : Header) : Int
+        other.key <=> key
       end
 
       def <=>(other : String) : Int
